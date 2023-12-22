@@ -1,0 +1,22 @@
+.search {
+    height: 50px;
+    position: relative;
+}
+
+
+.search .search-box{
+    padding: 5px 10px;
+    width: 200px;
+    box-sizing: border-box;
+    height: 50px;
+    width: 300px;
+}
+
+
+.search .btn-box {
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+}
