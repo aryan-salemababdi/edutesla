@@ -24,9 +24,41 @@ body{
     flex-wrap: wrap;
   }
 
+  /* کد CSS برای اضافه کردن خطوط و تغییر رنگ‌ها */
+.step-line {
+  position: absolute;
+  width: calc(100% - 40px);
+  top: 50%;
+  left: 20px;
+  border: 1px solid red;
+  z-index: -1;
+}
+
+.step-title {
+  color: #1F3071;
+  margin-top: 20px;
+}
+
+.step-btn {
+  margin-right: 10px;
+}
+
+/* اعمال تغییرات در حالت ریسپانسیو */
+@media (max-width: 768px) {
+  .d-flex {
+    flex-direction: column;
+  }
+  .step-line {
+    width: calc(100% - 60px);
+    left: 30px;
+  }
+}
+
+
   @media (max-width: 756px) {
     .content{
         display: grid;
         grid-template-columns: repeat(2,auto);
     }
   }
+
