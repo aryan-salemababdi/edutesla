@@ -1,28 +1,31 @@
-body{
-    margin:0;
-    padding: 0;
-    background: #FAFAFA;
+body {
+  margin: 0;
+  padding: 0;
+  background: #FAFAFA;
 }
-.search-box {
-    padding-right: 2.5rem; 
-  }
-  .search-icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-  }
-  .content{
-    display: grid;
-    grid-template-columns: repeat(3,auto);
-  }
 
-  .representatives{
-    display:flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+.search-box {
+  padding-right: 2.5rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+
+.representatives {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 .step-line {
   position: absolute;
@@ -41,10 +44,12 @@ body{
 .step-btn {
   margin-right: 10px;
 }
+
 @media (max-width: 768px) {
   .d-flex {
     flex-direction: column;
   }
+
   .step-line {
     width: calc(100% - 60px);
     left: 30px;
@@ -63,7 +68,7 @@ body{
 }
 
 .active {
-  left:0;
+  left: 0;
 }
 
 
@@ -74,7 +79,7 @@ swiper-container {
 
 swiper-slide {
   text-align: center;
-  margin:10px 0px;
+  margin: 10px 0px;
   font-size: 18px;
   background: #fff;
   display: flex;
@@ -85,10 +90,9 @@ swiper-slide {
 
 
 
-  @media (max-width: 756px) {
-    .content{
-        display: grid;
-        grid-template-columns: repeat(2,auto);
-    }
+@media (max-width: 756px) {
+  .content {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
   }
-
+}
