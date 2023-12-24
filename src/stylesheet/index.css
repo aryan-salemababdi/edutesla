@@ -24,7 +24,6 @@ body{
     flex-wrap: wrap;
   }
 
-  /* کد CSS برای اضافه کردن خطوط و تغییر رنگ‌ها */
 .step-line {
   position: absolute;
   width: calc(100% - 40px);
@@ -42,8 +41,6 @@ body{
 .step-btn {
   margin-right: 10px;
 }
-
-/* اعمال تغییرات در حالت ریسپانسیو */
 @media (max-width: 768px) {
   .d-flex {
     flex-direction: column;
@@ -53,6 +50,39 @@ body{
     left: 30px;
   }
 }
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.active {
+  left:0;
+}
+
+
+swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-slide {
+  text-align: center;
+  margin:10px 0px;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 
   @media (max-width: 756px) {

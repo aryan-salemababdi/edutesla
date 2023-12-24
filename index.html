@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="src/stylesheet/index.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -14,20 +19,84 @@
 </head>
 
 <body dir="rtl">
-  <header class="my-3">
-    <div class="d-flex justify-content-center">
-      <img src="public/images/Transparent 1 (2).png" alt="logo" />
-    </div>
-    <div class="container my-3 w-50">
-      <form action="/search" method="get">
-        <div class="position-relative">
-          <input type="text" name="query" class="form-control search-box" style="background: #F0F0F0;">
-          <i class="fas fa-search search-icon"></i>
+  <header>
+    <div class="d-none d-sm-block mx-3">
+      <div class="d-flex mx-2">
+        <div>
+          <img src="public/images/Transparent 1 (2).png" alt="logo" />
         </div>
+        <div class="my-3 mx-3 w-50">
+          <form action="/search" method="get">
+            <div class="position-relative">
+              <input type="text" name="query" class="form-control search-box" style="background: #F0F0F0;">
+              <i class="fas fa-search search-icon"></i>
+            </div>
+          </form>
+        </div>
+      </div>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active text-decoration-none" style="text-decoration: none;color: black;" href="#">خانه</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="text-decoration: none;color: black;" href="#">درباره ما</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="text-decoration: none;color: black;" href="#">مقالات</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="text-decoration: none;color: black;" href="#">اخبار</a>
+        </li>
+      </ul>
     </div>
-    </form>
+    <div class="d-block d-sm-none">
+      <div class="d-flex align-items-center">
+        <img src="public/images/Transparent 1 (2).png" class="w-25" alt="logo" />
+      </div>
+      <div class="row align-items-center m-3">
+        <div class="col">
+          <button class="btn" onclick="openSidebar()">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+        <div class="col">
+          <form action="/search" method="get">
+            <div class="position-relative">
+              <input type="text" name="query" class="form-control search-box" style="background: #F0F0F0;">
+              <i class="fas fa-search search-icon"></i>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </header>
+  <div class="sidebar" id="sidebar">
+    <div class="m-2">
+      <form action="/search" method="get">
+        <div class="position-relative">
+          <input type="text" name="query" class="form-control search-box"
+            style="background: darkslategrey; border:none;" placeholder="کلید واژه را وارد کنید ...">
+          <i class="fas fa-search search-icon"></i>
+        </div>
+      </form>
+    </div>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active text-decoration-none text-white" style="color: black;" href="#">خانه</a>
+      </li>
+      <hr class="w-75" style="border:0.5px solid gray;" />
+      <li class="nav-item">
+        <a class="nav-link text-white" style="color: black;" href="#">درباره ما</a>
+      </li>
+      <hr class="w-75" style="border:0.5px solid gray;" />
+      <li class="nav-item">
+        <a class="nav-link text-white" style="color: black;" href="#">مقالات</a>
+        <hr class="w-75" style="border:0.5px solid gray;" />
+      <li class="nav-item">
+        <a class="nav-link text-white" style="color: black;" href="#">اخبار</a>
+      </li>
+    </ul>
+  </div>
   <main class="m-5">
     <div class="container">
       <div class="row">
@@ -180,120 +249,67 @@
       </div>
     </div>
     <h4 class=" text-center my-5" style="color: #1F3071;"> دانشگاه های برتر<span class="text-danger"> ترکیه </span></h4>
-    <div class=" d-flex flex-wrap justify-content-center">
-      <div class="card  m-4 shadow " style="width: 18rem;">
-        <img src="public/images/iStock_98489729_LARGE 1.png" class="card-img-top style=" ;" alt="...">
-        <div class="card-body">
-          <h6 class="card-title text-danger">معرفی دانشگاه های ترکیه</h6>
-          <h4 class="card-title" style="color: #1F3071;">دانشگاه استانبول</h4>
-          <p class="card-text">ارتان بورس تاپ با پشت سر گداشتن تجربیات موفق در امور مهاجرتی,بستری انلاین را در فالب یک
-            پلتفرم واسط ایجاد کرده است تا متقاضیان مهجرت تحصیلی ...</p>
-          <div class="d-flex justify-content-between">
-            <div class=" justify-content-end">
-              <button class="btn text-light bg-danger rounded-pill ">
-                <img src="public/images/Vector.png" alt="">
-                پذیرش رایگان
-              </button>
-
-            </div>
-            <div class=" justify-content-end ">
-              <button class="btn">
-                ادامه مطلب
-                <span>
-                  <svg width="12" height="12" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_1_94)">
-                      <path
-                        d="M12.465 2.2425C12.0975 1.875 11.505 1.875 11.1375 2.2425L4.90501 8.475C4.61251 8.7675 4.61251 9.24 4.90501 9.5325L11.1375 15.765C11.505 16.1325 12.0975 16.1325 12.465 15.765C12.8325 15.3975 12.8325 14.805 12.465 14.4375L7.03501 9L12.4725 3.5625C12.8325 3.2025 12.8325 2.6025 12.465 2.2425Z"
-                        fill="#F5002C" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_1_94">
-                        <rect width="18" height="18" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </span>
-              </button>
+    <swiper-container class="mySwiper" pagination="true">
+      <swiper-slide>
+        <div class="card  m-4 shadow " style="width: 18rem;">
+          <img src="public/images/iStock_98489729_LARGE 1.png" class="card-img-top style=" ;" alt="...">
+          <div class="card-body">
+            <h6 class="card-title text-danger">معرفی دانشگاه های ترکیه</h6>
+            <h4 class="card-title" style="color: #1F3071;">دانشگاه استانبول</h4>
+            <p class="card-text">ارتان بورس تاپ با پشت سر گداشتن تجربیات موفق در امور مهاجرتی,بستری انلاین را در فالب یک
+              پلتفرم واسط ایجاد کرده است تا متقاضیان مهجرت تحصیلی ...</p>
+            <div class="d-flex justify-content-between">
+              <div class=" justify-content-end">
+                <button class="btn text-light bg-danger rounded-pill ">
+                  <img src="public/images/Vector.png" alt="">
+                  پذیرش رایگان
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="card m-4 shadow" style="width: 18rem;">
-        <img src="public/images/iStock_98489729_LARGE 1.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h6 class="card-title text-danger">معرفی دانشگاه های ترکیه</h6>
-          <h4 class="card-title" style="color: #1F3071;">دانشگاه استانبول</h4>
-          <p class="card-text">ارتان بورس تاپ با پشت سر گداشتن تجربیات موفق در امور مهاجرتی,بستری انلاین را در فالب یک
-            پلتفرم واسط ایجاد کرده است تا متقاضیان مهجرت تحصیلی ...</p>
-          <div class="d-flex justify-content-between">
-            <div class=" justify-content-end">
-              <button class="btn text-light bg-danger rounded-pill ">
-                <img src="public/images/Vector.png" alt="">
-                پذیرش رایگان
-              </button>
-
-            </div>
-            <div class=" justify-content-end">
-              <button class="btn">
-                ادامه مطلب
-                <span>
-                  <svg width="12" height="12" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_1_94)">
-                      <path
-                        d="M12.465 2.2425C12.0975 1.875 11.505 1.875 11.1375 2.2425L4.90501 8.475C4.61251 8.7675 4.61251 9.24 4.90501 9.5325L11.1375 15.765C11.505 16.1325 12.0975 16.1325 12.465 15.765C12.8325 15.3975 12.8325 14.805 12.465 14.4375L7.03501 9L12.4725 3.5625C12.8325 3.2025 12.8325 2.6025 12.465 2.2425Z"
-                        fill="#F5002C" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_1_94">
-                        <rect width="18" height="18" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </span>
-              </button>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="card  m-4 shadow " style="width: 18rem;">
+          <img src="public/images/iStock_98489729_LARGE 1.png" class="card-img-top style=" ;" alt="...">
+          <div class="card-body">
+            <h6 class="card-title text-danger">معرفی دانشگاه های ترکیه</h6>
+            <h4 class="card-title" style="color: #1F3071;">دانشگاه استانبول</h4>
+            <p class="card-text">ارتان بورس تاپ با پشت سر گداشتن تجربیات موفق در امور مهاجرتی,بستری انلاین را در فالب یک
+              پلتفرم واسط ایجاد کرده است تا متقاضیان مهجرت تحصیلی ...</p>
+            <div class="d-flex justify-content-between">
+              <div class=" justify-content-end">
+                <button class="btn text-light bg-danger rounded-pill ">
+                  <img src="public/images/Vector.png" alt="">
+                  پذیرش رایگان
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="card rounded m-4 shadow" style="width: 18rem;">
-        <img src="public/images/iStock_98489729_LARGE 1.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h6 class="card-title text-danger">معرفی دانشگاه های ترکیه</h6>
-          <h4 class="card-title" style="color: #1F3071;">دانشگاه استانبول</h4>
-          <p class="card-text">ارتان بورس تاپ با پشت سر گداشتن تجربیات موفق در امور مهاجرتی,بستری انلاین را در فالب یک
-            پلتفرم واسط ایجاد کرده است تا متقاضیان مهجرت تحصیلی ...</p>
-          <div class="d-flex justify-content-between">
-            <div class=" justify-content-end">
-              <button class="btn text-light bg-danger rounded-pill ">
-                <img src="public/images/Vector.png" alt="">
-                پذیرش رایگان
-              </button>
-
-            </div>
-            <div class=" justify-content-end">
-              <button class="btn">
-                ادامه مطلب
-                <span>
-                  <svg width="12" height="12" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_1_94)">
-                      <path
-                        d="M12.465 2.2425C12.0975 1.875 11.505 1.875 11.1375 2.2425L4.90501 8.475C4.61251 8.7675 4.61251 9.24 4.90501 9.5325L11.1375 15.765C11.505 16.1325 12.0975 16.1325 12.465 15.765C12.8325 15.3975 12.8325 14.805 12.465 14.4375L7.03501 9L12.4725 3.5625C12.8325 3.2025 12.8325 2.6025 12.465 2.2425Z"
-                        fill="#F5002C" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_1_94">
-                        <rect width="18" height="18" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </span>
-              </button>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="card  m-4 shadow " style="width: 18rem;">
+          <img src="public/images/iStock_98489729_LARGE 1.png" class="card-img-top style=" ;" alt="...">
+          <div class="card-body">
+            <h6 class="card-title text-danger">معرفی دانشگاه های ترکیه</h6>
+            <h4 class="card-title" style="color: #1F3071;">دانشگاه استانبول</h4>
+            <p class="card-text">ارتان بورس تاپ با پشت سر گداشتن تجربیات موفق در امور مهاجرتی,بستری انلاین را در فالب یک
+              پلتفرم واسط ایجاد کرده است تا متقاضیان مهجرت تحصیلی ...</p>
+            <div class="d-flex justify-content-between">
+              <div class=" justify-content-end">
+                <button class="btn text-light bg-danger rounded-pill ">
+                  <img src="public/images/Vector.png" alt="">
+                  پذیرش رایگان
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </swiper-slide>
+    </swiper-container>
 
-    </div>
+
     <div class="d-flex justify-content-center my-5">
       <a href="" class="btn text-light bg-primary rounded-pill ">مشاهده همه دانشگاه ها</a>
     </div>
@@ -341,104 +357,110 @@
     <h3 class="text-center my-5"><span style="color: #1F3071;">اخرین مقالات</span> <span class="text-danger">بلاگ
       </span>
     </h3>
-    <div class=" d-flex flex-wrap justify-content-center">
-      <div class="card rounded m-4 shadow" style="width: 18rem;">
-        <img src="public/images/iStock_98489729_LARGE 1.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h6 class="card-title text-danger">معرفی دانشگاه های ترکیه</h6>
-          <h4 class="card-title" style="color: #1F3071;">دانشگاه استانبول</h4>
-          <p class="card-text">ارتان بورس تاپ با پشت سر گداشتن تجربیات موفق در امور مهاجرتی,بستری انلاین را در فالب یک
-            پلتفرم واسط ایجاد کرده است تا متقاضیان مهجرت تحصیلی ...</p>
-          <div class="d-flex justify-content-between">
-            <div class=" justify-content-end">
-            </div>
-            <div class=" justify-content-end">
-              <button class="btn">
-                ادامه مطلب
-                <span>
-                  <svg width="12" height="12" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_1_94)">
-                      <path
-                        d="M12.465 2.2425C12.0975 1.875 11.505 1.875 11.1375 2.2425L4.90501 8.475C4.61251 8.7675 4.61251 9.24 4.90501 9.5325L11.1375 15.765C11.505 16.1325 12.0975 16.1325 12.465 15.765C12.8325 15.3975 12.8325 14.805 12.465 14.4375L7.03501 9L12.4725 3.5625C12.8325 3.2025 12.8325 2.6025 12.465 2.2425Z"
-                        fill="#F5002C" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_1_94">
-                        <rect width="18" height="18" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card rounded m-4 shadow" style="width: 18rem;">
-        <img src="public/images/iStock_98489729_LARGE 1.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h6 class="card-title text-danger">معرفی دانشگاه های ترکیه</h6>
-          <h4 class="card-title" style="color: #1F3071;">دانشگاه استانبول</h4>
-          <p class="card-text">ارتان بورس تاپ با پشت سر گداشتن تجربیات موفق در امور مهاجرتی,بستری انلاین را در فالب یک
-            پلتفرم واسط ایجاد کرده است تا متقاضیان مهجرت تحصیلی ...</p>
-          <div class="d-flex justify-content-between">
-            <div class=" justify-content-end">
-            </div>
-            <div class=" justify-content-end">
-              <button class="btn">
-                ادامه مطلب
-                <span>
-                  <svg width="12" height="12" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_1_94)">
-                      <path
-                        d="M12.465 2.2425C12.0975 1.875 11.505 1.875 11.1375 2.2425L4.90501 8.475C4.61251 8.7675 4.61251 9.24 4.90501 9.5325L11.1375 15.765C11.505 16.1325 12.0975 16.1325 12.465 15.765C12.8325 15.3975 12.8325 14.805 12.465 14.4375L7.03501 9L12.4725 3.5625C12.8325 3.2025 12.8325 2.6025 12.465 2.2425Z"
-                        fill="#F5002C" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_1_94">
-                        <rect width="18" height="18" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </span>
-              </button>
+    <swiper-container class="mySwiper" pagination="true">
+      <swiper-slide>
+        <div class="card rounded m-4 shadow" style="width: 18rem;">
+          <img src="public/images/iStock_98489729_LARGE 1.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h6 class="card-title text-danger">معرفی دانشگاه های ترکیه</h6>
+            <h4 class="card-title" style="color: #1F3071;">دانشگاه استانبول</h4>
+            <p class="card-text">ارتان بورس تاپ با پشت سر گداشتن تجربیات موفق در امور مهاجرتی,بستری انلاین را در فالب یک
+              پلتفرم واسط ایجاد کرده است تا متقاضیان مهجرت تحصیلی ...</p>
+            <div class="d-flex justify-content-between">
+              <div class=" justify-content-end">
+              </div>
+              <div class=" justify-content-end">
+                <button class="btn">
+                  ادامه مطلب
+                  <span>
+                    <svg width="12" height="12" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_1_94)">
+                        <path
+                          d="M12.465 2.2425C12.0975 1.875 11.505 1.875 11.1375 2.2425L4.90501 8.475C4.61251 8.7675 4.61251 9.24 4.90501 9.5325L11.1375 15.765C11.505 16.1325 12.0975 16.1325 12.465 15.765C12.8325 15.3975 12.8325 14.805 12.465 14.4375L7.03501 9L12.4725 3.5625C12.8325 3.2025 12.8325 2.6025 12.465 2.2425Z"
+                          fill="#F5002C" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_1_94">
+                          <rect width="18" height="18" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="card rounded m-4 shadow" style="width: 18rem;">
-        <img src="public/images/iStock_98489729_LARGE 1.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h6 class="card-title text-danger">معرفی دانشگاه های ترکیه</h6>
-          <h4 class="card-title" style="color: #1F3071;">دانشگاه استانبول</h4>
-          <p class="card-text">ارتان بورس تاپ با پشت سر گداشتن تجربیات موفق در امور مهاجرتی,بستری انلاین را در فالب یک
-            پلتفرم واسط ایجاد کرده است تا متقاضیان مهجرت تحصیلی ...</p>
-          <div class="d-flex justify-content-between">
-            <div class=" justify-content-end">
-            </div>
-            <div class=" justify-content-end">
-              <button class="btn">
-                ادامه مطلب
-                <span>
-                  <svg width="12" height="12" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_1_94)">
-                      <path
-                        d="M12.465 2.2425C12.0975 1.875 11.505 1.875 11.1375 2.2425L4.90501 8.475C4.61251 8.7675 4.61251 9.24 4.90501 9.5325L11.1375 15.765C11.505 16.1325 12.0975 16.1325 12.465 15.765C12.8325 15.3975 12.8325 14.805 12.465 14.4375L7.03501 9L12.4725 3.5625C12.8325 3.2025 12.8325 2.6025 12.465 2.2425Z"
-                        fill="#F5002C" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_1_94">
-                        <rect width="18" height="18" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </span>
-              </button>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="card rounded m-4 shadow" style="width: 18rem;">
+          <img src="public/images/iStock_98489729_LARGE 1.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h6 class="card-title text-danger">معرفی دانشگاه های ترکیه</h6>
+            <h4 class="card-title" style="color: #1F3071;">دانشگاه استانبول</h4>
+            <p class="card-text">ارتان بورس تاپ با پشت سر گداشتن تجربیات موفق در امور مهاجرتی,بستری انلاین را در فالب یک
+              پلتفرم واسط ایجاد کرده است تا متقاضیان مهجرت تحصیلی ...</p>
+            <div class="d-flex justify-content-between">
+              <div class=" justify-content-end">
+              </div>
+              <div class=" justify-content-end">
+                <button class="btn">
+                  ادامه مطلب
+                  <span>
+                    <svg width="12" height="12" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_1_94)">
+                        <path
+                          d="M12.465 2.2425C12.0975 1.875 11.505 1.875 11.1375 2.2425L4.90501 8.475C4.61251 8.7675 4.61251 9.24 4.90501 9.5325L11.1375 15.765C11.505 16.1325 12.0975 16.1325 12.465 15.765C12.8325 15.3975 12.8325 14.805 12.465 14.4375L7.03501 9L12.4725 3.5625C12.8325 3.2025 12.8325 2.6025 12.465 2.2425Z"
+                          fill="#F5002C" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_1_94">
+                          <rect width="18" height="18" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="card rounded m-4 shadow" style="width: 18rem;">
+          <img src="public/images/iStock_98489729_LARGE 1.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h6 class="card-title text-danger">معرفی دانشگاه های ترکیه</h6>
+            <h4 class="card-title" style="color: #1F3071;">دانشگاه استانبول</h4>
+            <p class="card-text">ارتان بورس تاپ با پشت سر گداشتن تجربیات موفق در امور مهاجرتی,بستری انلاین را در فالب یک
+              پلتفرم واسط ایجاد کرده است تا متقاضیان مهجرت تحصیلی ...</p>
+            <div class="d-flex justify-content-between">
+              <div class=" justify-content-end">
+              </div>
+              <div class=" justify-content-end">
+                <button class="btn">
+                  ادامه مطلب
+                  <span>
+                    <svg width="12" height="12" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_1_94)">
+                        <path
+                          d="M12.465 2.2425C12.0975 1.875 11.505 1.875 11.1375 2.2425L4.90501 8.475C4.61251 8.7675 4.61251 9.24 4.90501 9.5325L11.1375 15.765C11.505 16.1325 12.0975 16.1325 12.465 15.765C12.8325 15.3975 12.8325 14.805 12.465 14.4375L7.03501 9L12.4725 3.5625C12.8325 3.2025 12.8325 2.6025 12.465 2.2425Z"
+                          fill="#F5002C" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_1_94">
+                          <rect width="18" height="18" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </swiper-slide>
+    </swiper-container>
     <div class="d-flex  justify-content-center my-4">
       <a href="" class="btn text-light bg-primary rounded-pill ">مشاهده همه مقالات</a>
     </div>
@@ -491,10 +513,12 @@
             </div>
             <p>02136565454 <br>0214589635</p>
             <div class="d-flex justify-content-start">
-              <h5 style="color: #1F3071;" class="mx-2"><i class="fa-regular fa-clock text-danger my-3"></i> ساعات پاسخگویی از 8 صبح تا 8 شب </h5>
+              <h5 style="color: #1F3071;" class="mx-2"><i class="fa-regular fa-clock text-danger my-3"></i> ساعات
+                پاسخگویی از 8 صبح تا 8 شب </h5>
             </div>
             <div class="d-flex justify-content-start">
-              <h5 style="color: #1F3071;" class="mx-2"><i class="fa-regular fa-envelope text-danger my-3"></i>ساعات پاسخگویی از 8 صبح تا 8 شب</h5>
+              <h5 style="color: #1F3071;" class="mx-2"><i class="fa-regular fa-envelope text-danger my-3"></i>ساعات
+                پاسخگویی از 8 صبح تا 8 شب</h5>
             </div>
           </div>
           <div class="col-md-6 col-lg-3 mb-4">
@@ -532,7 +556,7 @@
         </div>
       </div>
     </footer>
-
+    <script src="src/js/main.tsc"></script>
 </body>
 
 </html>
