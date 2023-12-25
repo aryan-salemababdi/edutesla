@@ -1,5 +1,9 @@
+type mainTypes = {
+  openSidebar: () => void;
+}
+
 let sidebar = document.querySelector('#sidebar');
-const openSidebar = () => sidebar?.classList.toggle("active");
+const openSidebar:mainTypes["openSidebar"] = () => sidebar?.classList.toggle("active");
 $().ready(function(){
   $('.slick-carousel').slick({
     centerPadding: "0px",
