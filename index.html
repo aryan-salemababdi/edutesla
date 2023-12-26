@@ -28,7 +28,7 @@
         <div class="my-3 mx-3 w-50">
           <form action="/search" method="get">
             <div class="position-relative">
-              <input type="text" name="query" class="form-control search-box" style="background: #F0F0F0;">
+              <input type="text" name="query" class="form-control search-box" placeholder="جستجو ..." style="background: #F0F0F0;">
               <i class="fas fa-search search-icon"></i>
             </div>
           </form>
@@ -41,8 +41,13 @@
         <li class="nav-item">
           <a class="nav-link" style="text-decoration: none;color: black;" href="#">درباره ما</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" style="text-decoration: none;color: black;" href="#">مقالات</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" style="text-decoration: none;color: black;" href="#" id="articlesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">مقالات</a>
+          <div class="dropdown-menu" style="text-align: right;" aria-labelledby="articlesDropdown">
+            <a class="dropdown-item" style="text-align: right;" href="#">لیست مقالات</a>
+            <a class="dropdown-item" style="text-align: right;" href="#">ارسال مقاله</a>
+            <a class="dropdown-item" style="text-align: right;" href="#">دسته بندی مقالات</a>
+          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" style="text-decoration: none;color: black;" href="#">اخبار</a>
@@ -62,7 +67,7 @@
         <div class="col">
           <form action="/search" method="get">
             <div class="position-relative">
-              <input type="text" name="query" class="form-control search-box" style="background: #F0F0F0;">
+              <input type="text" name="query" placeholder="جستجو ..." class="form-control search-box" style="background: #F0F0F0;">
               <i class="fas fa-search search-icon"></i>
             </div>
           </form>
@@ -75,8 +80,8 @@
       <form action="/search" method="get">
         <div class="position-relative">
           <input type="text" name="query" class="form-control search-box"
-            style="background: darkslategrey; border:none;" placeholder="کلید واژه را وارد کنید ...">
-          <i class="fas fa-search search-icon"></i>
+            style="background:#0000004D; border:none;" placeholder="کلید واژه را وارد کنید ...">
+          <i class="fas fa-search search-icon" style="color: gray;"></i>
         </div>
       </form>
     </div>
@@ -89,13 +94,20 @@
         <a class="nav-link text-white" style="color: black;" href="#">درباره ما</a>
       </li>
       <hr class="w-75" style="border:0.5px solid gray;" />
-      <li class="nav-item">
-        <a class="nav-link text-white" style="color: black;" href="#">مقالات</a>
-        <hr class="w-75" style="border:0.5px solid gray;" />
+      <li class="nav-item dropdownx" id="articlesDropdown">
+        <a class="nav-link dropdown-toggle text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown()">مقالات</a>
+        <div class="dropdownx-menu" aria-labelledby="articlesDropdown" id="dropdownMenu">
+          <a class="dropdown-item" href="#">لیست مقالات</a>
+          <a class="dropdown-item" href="#">ارسال مقاله</a>
+          <a class="dropdown-item" href="#">دسته بندی مقالات</a>
+        </div>
+      </li>
+      <hr class="w-75" style="border:0.5px solid gray;" />
       <li class="nav-item">
         <a class="nav-link text-white" style="color: black;" href="#">اخبار</a>
       </li>
     </ul>
+    
   </div>
   <main class="m-5">
     <div class="container">
@@ -724,6 +736,9 @@
       </div>
     </footer>
     <script src="src/ts/main.tsc"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
