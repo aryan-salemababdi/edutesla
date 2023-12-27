@@ -88,17 +88,20 @@ swiper-slide {
 }
 
 
-.nav-item .dropdownx {
-  position: relative;
-}
-
 .dropdownx-menu {
   display: none;
-  color: white;
-  border-bottom: 0.75px solid gray;
-  border-right: 0.75px solid gray;
-  margin-left: 20px;
+  overflow: hidden;
+  height: 0;
+  opacity: 0.6;
+  transition: height 0.3s ease-in-out;
 }
+
+
+
+.dropdownx-menu.active {
+  display: block;
+}
+
 
 .dropdownx-menu a {
   color: white;
@@ -107,6 +110,66 @@ swiper-slide {
   font-size: 14px;
   display: block;
 }
+
+.rotate-icon {
+  margin-right: 75px;
+  transition: transform 0.3s ease;
+}
+
+.rotate-icon.active {
+  transform: rotate(180deg);
+}
+
+.menu-item {
+  position: relative;
+}
+
+.division {
+  position: absolute;
+  width: 200px;
+  top: 100%;
+  left: 0;
+  border-radius: 5px 5px 2px 2px;
+  border-top: 5px solid #1F3071;
+  background-color: #fff;
+  list-style: none;
+  opacity: 0;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform-origin: top;
+  transform: scaleY(0);
+  margin-left: -100px;
+  padding: 10px;
+  text-align: right;
+}
+
+.menu-item:hover .division {
+  opacity: 1;
+  transform: scaleY(1);
+  animation: slideFromBottom 1s forwards;
+}
+
+.division li a {
+  color: black;
+}
+
+.division li a:hover {
+  color: #1F3071;
+}
+
+@keyframes slideFromBottom {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+
 
 
 

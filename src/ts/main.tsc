@@ -1,6 +1,22 @@
 let sidebar = document.querySelector('#sidebar');
-const openSidebar = () => sidebar?.classList.toggle("active");
-$().ready(function(){
+let bodyClicked = false;
+
+document.body.addEventListener('click', (event) => {
+  const clickedElement = event.target;
+  if (sidebar && clickedElement === document.body) {
+    bodyClicked = true;
+    sidebar?.classList.remove("active")
+  }
+});
+
+
+const openSidebar = () => {
+  sidebar?.classList.toggle("active");
+  bodyClicked = false
+}
+
+
+$().ready(function () {
   $('.slick-carousel').slick({
     centerPadding: "0px",
     dots: true,
@@ -9,9 +25,18 @@ $().ready(function(){
   });
 });
 
+const articleDropdown = () => {
+  const dropdownMenu = document.querySelector("#dropdownMenu");
+  const icon = document.querySelector('.rotate-icon');
+  icon.classList.toggle('active');
+  dropdownMenu.classList.toggle("active");
+  if (dropdownMenu.classList.contains("active")) {
+    dropdownMenu.style.height = dropdownMenu.scrollHeight + "px";
+  } else {
+    dropdownMenu.style.height = "0";
+    setTimeout(() => {
+      dropdownMenu.style.height = "";
+    }, 300);
+  }
+};
 
-toggleDropdown = () => {
-  const dropdownMenu = document.getElementById("dropdownMenu");
-  if (dropdownMenu.style.display === "none" || dropdownMenu.style.display === "") dropdownMenu.style.display = "block";
-  else dropdownMenu.style.display = "none";
-}
